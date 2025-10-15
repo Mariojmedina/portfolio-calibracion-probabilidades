@@ -1,25 +1,40 @@
 # Portfolio: Calibración de Probabilidades y Threshold
 
 ## Descripción
-
-Este portafolio ejemplifica la importancia de calibrar las probabilidades y ajustar el threshold en problemas de clasificación, especialmente cuando equivocarse es muy costoso.
+Este portafolio demuestra, con ejemplos reproducibles, cómo calibrar probabilidades de modelos y cómo elegir umbrales (thresholds) considerando costos asimétricos de error.
 
 ## Contenido
 
-- **notebooks/**: Contiene el Jupyter Notebook principal con ejemplos y análisis
-  - `calibracion_threshold_costly_errors.ipynb`: Notebook completo con:
-    1. Introducción al problema
-    2. Ejemplos de problemas donde equivocarse cuesta mucho
-    3. Técnicas de calibración de probabilidades (Platt scaling, isotonic regression)
-    4. Experimentación con diferentes thresholds y análisis de métricas de costo
-    5. Conclusiones sobre la importancia de calibrar y elegir el threshold correcto
+- notebooks/
+  - calibracion_threshold_costly_errors.ipynb: Notebook sobre ajuste de thresholds bajo errores costosos, con ejemplos, métricas y recomendaciones.
+  - tecnicas_calibracion_modelos.ipynb: Notebook profesional con teoría, ventajas/desventajas, código y visualizaciones para:
+    - Histogram Binning
+    - Platt Scaling
+    - Isotonic Regression
+    - Temperature Scaling
+    - Beta Calibration (explicación)
+    - Otros enfoques y consejos prácticos
 
-## Objetivo
+## Calibración: visión general
+Un modelo bien calibrado produce probabilidades que coinciden con frecuencias observadas. La calibración mejora decisiones basadas en riesgo, métricas de costo, y comunicación con stakeholders. En este repositorio se muestran técnicas clásicas (binning, Platt, isotonic, temperature) y cuándo usarlas.
 
-Demostrar cómo la calibración de probabilidades y la selección adecuada del threshold pueden mejorar significativamente el desempeño de modelos de clasificación en escenarios donde los errores tienen costos asimétricos.
+## Cómo correr los notebooks
+1. Requisitos:
+   - Python 3.9+
+   - Paquetes: numpy, pandas, scikit-learn, matplotlib, scipy, jupyter
+2. Instalar dependencias (opcional con venv):
+   - pip install -r requirements.txt (si existe) o:
+   - pip install numpy pandas scikit-learn matplotlib scipy jupyter
+3. Ejecutar Jupyter:
+   - jupyter notebook
+4. Abrir en el navegador:
+   - notebooks/calibracion_threshold_costly_errors.ipynb
+   - notebooks/tecnicas_calibracion_modelos.ipynb
+
+## Propósito del repositorio
+Servir como portfolio técnico y guía práctica para calibración de probabilidades y selección de thresholds en clasificación binaria con costos asimétricos.
 
 ## Tecnologías
-
 - Python
 - Scikit-learn
 - Matplotlib/Seaborn
